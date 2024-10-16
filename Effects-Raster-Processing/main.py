@@ -19,7 +19,7 @@ def create_negative(image):
 
 
 def apply_sepia(image):
-    # Застосовує серпійний фільтр до зображення, щоб надати йому теплі відтінки
+    # Застосовує сепійний фільтр до зображення, щоб надати йому теплі відтінки
     sepia_filter = np.array([[0.393, 0.769, 0.189],
                              [0.349, 0.686, 0.168],
                              [0.272, 0.534, 0.131]])
@@ -70,7 +70,7 @@ def save_image(image, filename):
 def main():
     # Завантажує зображення з диска
     image_path = 'person.jpg'
-    sepia_image = 0  # Ініціалізація змінної для зображення в серпії
+    sepia_image = 0  # Ініціалізація змінної для зображення в сепії
 
     if not os.path.isfile(image_path):
         print(f"Файл '{image_path}' не знайдено.")  # Перевірка наявності файлу
@@ -103,12 +103,12 @@ def main():
     except Exception as e:
         print(f"Помилка при створенні негативу: {e}")  # Обробка помилки
 
-    # Застосування серпії
+    # Застосування сепії
     try:
-        sepia_image = apply_sepia(image)  # Застосування серпійного фільтру
+        sepia_image = apply_sepia(image)  # Застосування сепійного фільтру
         save_image(sepia_image, 'sepia_person.jpg')  # Збереження
     except Exception as e:
-        print(f"Помилка при застосуванні серпії: {e}")  # Обробка помилки
+        print(f"Помилка при застосуванні сепії: {e}")  # Обробка помилки
 
     # Застосування ефекту градієнта
     try:
@@ -123,18 +123,18 @@ def main():
     except Exception as e:
         print(f"Помилка при застосуванні градієнтного ефекту: {e}")  # Обробка помилки
 
-    # Застосування градієнтного ефекту до серпії
+    # Застосування градієнтного ефекту до сепії
     try:
-        gradient_sepia_image_image_diagonal = gradient_effect(sepia_image, 'diagonal')  # Діагональний градієнт до серпії
+        gradient_sepia_image_image_diagonal = gradient_effect(sepia_image, 'diagonal')  # Діагональний градієнт до сепії
         save_image(gradient_sepia_image_image_diagonal, 'sepia_gradient_diagonal_person.jpg')  # Збереження
 
-        gradient_sepia_image_from_center = gradient_effect(sepia_image, 'from_center')  # Градієнт від центру до серпії
+        gradient_sepia_image_from_center = gradient_effect(sepia_image, 'from_center')  # Градієнт від центру до сепії
         save_image(gradient_sepia_image_from_center, 'sepia_gradient_from_center_person.jpg')  # Збереження
 
-        gradient_sepia_image_to_center = gradient_effect(sepia_image, 'to_center')  # Градієнт до центру до серпії
+        gradient_sepia_image_to_center = gradient_effect(sepia_image, 'to_center')  # Градієнт до центру до сепії
         save_image(gradient_sepia_image_to_center, 'sepia_gradient_to_center_person.jpg')  # Збереження
     except Exception as e:
-        print(f"Помилка при застосуванні градієнтного ефекту до серпії: {e}")  # Обробка помилки
+        print(f"Помилка при застосуванні градієнтного ефекту до сепії: {e}")  # Обробка помилки
 
 
 if __name__ == "__main__":
